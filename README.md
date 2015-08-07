@@ -1,7 +1,37 @@
 # ios_phphotolibrary_demo
-PHPhotoLibrary Demo
+### What?
+Save/Delete the images from the photo library.
 
-More about PHPhotoLibrary:
+### How?
+Since iOS8, you can Delete the images using the PHPhotoLibrary class:
+
+Save images:
+```sh
+PHPhotoLibrary.sharedPhotoLibrary().performChanges({ () -> Void in
+    PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+    }, completionHandler: { (success, error) -> Void in
+        if success {
+            println("save image success")
+         } else {
+            println("save image faild")
+         }
+    })
+```
+
+Delete images:
+```sh
+PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+    PHAssetChangeRequest.deleteAssets([lastImageAsset])
+    }, completionHandler: { (success, error) -> Void in
+        if success {
+           println("delete image success")
+        } else {
+           println("delete image faild")
+        }
+    })
+```
+
+### More about the PHPhotoLibrary class:
 * https://developer.apple.com/library/prerelease/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/deleteAssets:
 * https://codeandrelax.wordpress.com/2014/09/18/getting-the-last-photo-from-the-users-library-in-ios8/
 * http://stackoverflow.com/questions/28724105/deleting-a-camera-roll-asset-using-photos-framework
