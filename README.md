@@ -3,7 +3,7 @@
 Save/Delete the images from the photo library.
 
 ### How?
-Since iOS8, you can Delete the images using the PHPhotoLibrary class:
+Since iOS8, you can Delete the images using the [PHPhotoLibrary](https://developer.apple.com/library/prerelease/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/doc/uid/TP40014384-CH1-SW2) class:
 
 Save images:
 ```sh
@@ -32,7 +32,6 @@ PHPhotoLibrary.sharedPhotoLibrary().performChanges({
 ```
 
 ### More about the PHPhotoLibrary class:
-* https://developer.apple.com/library/prerelease/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/deleteAssets:
 * https://codeandrelax.wordpress.com/2014/09/18/getting-the-last-photo-from-the-users-library-in-ios8/
 * http://stackoverflow.com/questions/28724105/deleting-a-camera-roll-asset-using-photos-framework
 * http://stackoverflow.com/questions/12127004/delete-an-asset-picture-or-video-from-iphone-in-ios
